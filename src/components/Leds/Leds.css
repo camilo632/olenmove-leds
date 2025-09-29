@@ -1,0 +1,11 @@
+/* Definición de la animación de parpadeo (blink/flash) */
+@keyframes blink-flash {
+    0%, 100% { opacity: 1; } /* Completamente visible */
+    50% { opacity: 0.2; }    /* Casi invisible/apagado */
+}
+
+/* Clase para aplicar la animación */
+.led-blink {
+    /* Aplica la animación: nombre, duración, tipo (abrupto), infinito */
+    animation: blink-flash 0.5s step-end infinite; 
+}
