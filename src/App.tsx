@@ -28,7 +28,7 @@ function App() {
           viewport={{ once: true, amount: 0.2 }}  
           transition={{ duration: 0.4, ease: "easeOut" }} 
         >
-          <span className="bg-green-600 w-5 rounded-l-2xl">
+          <span className="bg-green-600 w-3 rounded-l-2xl">
           </span>
           <div className="flex flex-col gap-8 w-full bg-slate-800 rounded-r-2xl md:py-8 py-5 md:px-10 px-5">
             <h2 className='md:text-2xl text-xl'>✅ État Normal</h2>
@@ -45,18 +45,18 @@ function App() {
           viewport={{ once: true, amount: 0.2 }}  
           transition={{ duration: 0.4, ease: "easeOut" }} 
         >
-          <span className="bg-orange-600 w-5 rounded-l-2xl">
+          <span className="bg-orange-600 w-3 rounded-l-2xl">
           </span>
           <div className="flex flex-col gap-8 w-full bg-slate-800 rounded-r-2xl md:py-8 py-5 md:px-10 px-5">
             <h2 className='md:text-2xl text-xl'>⚠️ Avertissements</h2>
             <div className='flex flex-col gap-3'>
               <Leds stateLed1={2} stateLed2={2} stateLed3={0} text='Avertissement (non critique)'/>
-              <Leds stateLed1={1} stateLed2={1} stateLed3={0} text='Préchaufface en cours (patientez)'/>
+              <Leds stateLed1={1} stateLed2={1} stateLed3={0} text='Préchauffage en cours (patientez)'/>
               <Leds stateLed1={1} stateLed2={2} stateLed3={2} text='Attention inversion de phases'/>
               <Leds stateLed1={1} stateLed2={2} stateLed3={0} text='État de charge (SoC) < 10%'/>
               <Leds stateLed1={1} stateLed2={2} stateLed3={0} text='État de charge (SoC) < 5% (décharge impossible)'/>
               <Leds stateLed1={0} stateLed2={2} stateLed3={2} text='Défaillance du système de conversion'/>
-              <Leds stateLed1={0} stateLed2={2} stateLed3={0} text='Merlin a perdu la communication avec Cerbo GX (XS ONE)'/>
+              <Leds stateLed1={0} stateLed2={2} stateLed3={0} text='Merlin a perdu la communication avec Cerbo GX'/>
             </div>
           </div>
         </motion.div>
@@ -67,7 +67,7 @@ function App() {
           viewport={{ once: true, amount: 0.2 }}  
           transition={{ duration: 0.4, ease: "easeOut" }} 
         >
-          <span className="bg-red-600 w-5 rounded-l-2xl">
+          <span className="bg-red-600 w-3 rounded-l-2xl">
           </span>
           <div className="flex flex-col gap-8 w-full bg-slate-800 rounded-r-2xl md:py-8 py-5 md:px-10 px-5">
             <h2 className='md:text-2xl text-xl'>🚨 Alertes Critiques</h2>

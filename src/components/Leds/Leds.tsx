@@ -1,6 +1,7 @@
 import "./Leds";
 import { motion } from "framer-motion"; 
 import { useState, useEffect } from 'react';
+import buzzer from "../../assets/speaker.svg";
 
 interface LedProps {
   stateLed1: number; // 0 = Off, 1 = On, 2 = Blinking
@@ -53,38 +54,44 @@ function Leds({ stateLed1, stateLed2, stateLed3, text }: LedProps) {
 
   return (
         <div className="flex flex-col gap-1">
-        <p className="text-md text-gray-400">{text}</p>
-        <div className="flex flex-row gap-5 justify-start py-5 px-8 bg-slate-950 w-fit rounded-2xl">
-        
-        {/* LED 1: Green */}
-        {stateLed1 === 2 ? (
-                <motion.span
-                className={`${isGreen ? 'led-green-on' : 'led-off'} rounded-full h-10 w-10`}
-                transition={{ repeat: Infinity, repeatType: 'loop' }}
-                />
-        ) : (
-                <span className={`${led1Class} rounded-full h-10 w-10`}></span>
-        )}
+        <p className="text-md text-slate-400">{text}</p>
+        <div className="flex gap-3 items-center">
+          <div className="flex flex-row gap-5 justify-start py-5 px-8 bg-slate-950 w-fit rounded-2xl">
+          
+          {/* LED 1: Green */}
+          {stateLed1 === 2 ? (
+                  <motion.span
+                  className={`${isGreen ? 'led-green-on' : 'led-off'} rounded-full h-10 w-10`}
+                  transition={{ repeat: Infinity, repeatType: 'loop' }}
+                  />
+          ) : (
+                  <span className={`${led1Class} rounded-full h-10 w-10`}></span>
+          )}
 
-        {/* LED 2: Orange */}
-        {stateLed2 === 2 ? (
-                <motion.span
-                className={`${isOrange ? 'led-orange-on' : 'led-off'} rounded-full h-10 w-10`}
-                transition={{ repeat: Infinity, repeatType: 'loop' }}
-                />
-        ) : (
-                <span className={`${led2Class} rounded-full h-10 w-10`}></span>
-        )}
+          {/* LED 2: Orange */}
+          {stateLed2 === 2 ? (
+                  <motion.span
+                  className={`${isOrange ? 'led-orange-on' : 'led-off'} rounded-full h-10 w-10`}
+                  transition={{ repeat: Infinity, repeatType: 'loop' }}
+                  />
+          ) : (
+                  <span className={`${led2Class} rounded-full h-10 w-10`}></span>
+          )}
 
-        {/* LED 3: Red */}
-        {stateLed3 === 2 ? (
-                <motion.span
-                className={`${isRed ? 'led-red-on' : 'led-off'} rounded-full h-10 w-10`}
-                transition={{ repeat: Infinity, repeatType: 'loop' }}
-                />
-        ) : (
-                <span className={`${led3Class} rounded-full h-10 w-10`}></span>
-        )}
+          {/* LED 3: Red */}
+          {stateLed3 === 2 ? (
+                  <motion.span
+                  className={`${isRed ? 'led-red-on' : 'led-off'} rounded-full h-10 w-10`}
+                  transition={{ repeat: Infinity, repeatType: 'loop' }}
+                  />
+          ) : (
+                  <span className={`${led3Class} rounded-full h-10 w-10`}></span>
+          )}
+          </div>
+          {(stateLed1 === 1 && stateLed2 === 2 && stateLed3 === 2) &&
+            <img src={buzzer} alt="buzzer" className="h-10"/>
+          }
+
         </div>
         </div>
   );
