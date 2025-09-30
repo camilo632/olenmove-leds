@@ -11,7 +11,7 @@ function App() {
       <div className='flex flex-col justify-start items-center bg-slate-900 min-h-screen pt-15 pb-12'>
         <div className="pt-7 md:px-20 px-5 flex flex-col  gap-7">
         {/* Greeting */}
-        <motion.div className=" flex items-center gap-2 bg-slate-800 rounded-2xl md:py-8 py-5 md:px-10 px-5"
+        <motion.div className=" flex items-center gap-2 bg-slate-800 rounded-2xl md:py-8 py-5 md:px-10 px-5 shadow"
           initial={{ opacity: 0, y: 20 }}  
           whileInView={{ opacity: 1, y: 0 }}  
           viewport={{ once: true, amount: 0.2 }}  
@@ -22,7 +22,7 @@ function App() {
           </p>
         </motion.div> 
         {/* Alarm card - Green */}
-        <motion.div className="flex"
+        <motion.div className="flex shadow rounded-2xl"
           initial={{ opacity: 0, y: 20 }}  
           whileInView={{ opacity: 1, y: 0 }}  
           viewport={{ once: true, amount: 0.2 }}  
@@ -39,7 +39,7 @@ function App() {
           </div>
         </motion.div>
         {/* Alarm card - Orange */}
-        <motion.div className="flex"
+        <motion.div className="flex shadow rounded-2xl"
           initial={{ opacity: 0, y: 20 }}  
           whileInView={{ opacity: 1, y: 0 }}  
           viewport={{ once: true, amount: 0.2 }}  
@@ -56,12 +56,12 @@ function App() {
               <Leds stateLed1={1} stateLed2={2} stateLed3={0} text='État de charge (SoC) < 10%'/>
               <Leds stateLed1={1} stateLed2={2} stateLed3={0} text='État de charge (SoC) < 5% (décharge impossible)'/>
               <Leds stateLed1={0} stateLed2={2} stateLed3={2} text='Défaillance du système de conversion'/>
-              <Leds stateLed1={0} stateLed2={2} stateLed3={0} text='Merlin a perdu la communication avec Cerbo GX'/>
+              <Leds stateLed1={0} stateLed2={2} stateLed3={0} text='Merlin a perdu la communication avec le contrôleur onduleur '/>
             </div>
           </div>
         </motion.div>
         {/* Alarm card - Red */}
-        <motion.div className="flex"
+        <motion.div className="flex shadow rounded-2xl"
           initial={{ opacity: 0, y: 20 }}  
           whileInView={{ opacity: 1, y: 0 }}  
           viewport={{ once: true, amount: 0.2 }}  
